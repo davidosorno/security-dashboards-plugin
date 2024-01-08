@@ -26,6 +26,17 @@ import {
 import React, { Dispatch, SetStateAction } from 'react';
 import { DashboardOption } from '../../types';
 import { columns } from './dashboard-signin-options';
+import {
+  OuiButtonEmpty,
+  OuiButton,
+  OuiModal,
+  OuiModalBody,
+  OuiModalFooter,
+  OuiModalHeader,
+  OuiModalHeaderTitle,
+  OuiSpacer,
+  OuiCheckboxGroup
+} from '@opensearch-project/oui';
 
 interface DashboardSignInProps {
   dashboardOptions: DashboardOption[];
@@ -48,7 +59,7 @@ export function SignInOptionsModal(props: DashboardSignInProps): JSX.Element {
     } else {
       let sameOptions = true;
       newSignInOptions.forEach((option) => {
-        if (!actualSignInOptions.includes(option)) {
+        if (actualSignInOptions.includes(option) === false) {
           sameOptions = false;
           return;
         }
