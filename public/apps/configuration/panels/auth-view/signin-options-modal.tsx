@@ -67,9 +67,7 @@ export function SignInOptionsModal(props: DashboardSignInProps): JSX.Element {
       disableUpdateButton(sameOptions);
     }
   }, [newSignInOptions, actualSignInOptions]);
-
   let modal;
-
   if (isModalVisible) {
     modal = (
       <EuiModal onClose={closeModal}>
